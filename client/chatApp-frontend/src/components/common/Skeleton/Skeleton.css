@@ -1,0 +1,109 @@
+.skeleton {
+  display: block;
+  flex-shrink: 0;
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    var(--color-surface-hover) 40%,
+    var(--color-border) 55%
+  );
+  background-size: 300% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+[data-theme='dark'] .skeleton {
+  background: linear-gradient(90deg, #222c39 25%, #2c3746 40%, #222c39 55%);
+  background-size: 300% 100%;
+}
+
+@keyframes skeleton-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
+
+.skeleton-group {
+  animation: skeleton-in 0.2s ease;
+}
+
+@keyframes skeleton-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* list rows (chats, contacts) */
+.skeleton-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.skeleton-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.skeleton-row--flat {
+  padding: var(--space-2) 0;
+}
+
+.skeleton-row__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.skeleton-row__top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+/* messages */
+.skeleton-messages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skeleton-messages__date {
+  align-self: center;
+  margin: var(--space-2) 0;
+}
+
+.skeleton-bubble--in {
+  align-self: flex-start;
+}
+
+.skeleton-bubble--out {
+  align-self: flex-end;
+  opacity: 0.75;
+}
+
+/* chat info media */
+.skeleton-media__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: var(--space-3);
+}
+
+.skeleton-media__thumb {
+  aspect-ratio: 1;
+}

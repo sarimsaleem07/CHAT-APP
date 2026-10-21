@@ -1,0 +1,86 @@
+.avatar-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.avatar-upload__btn {
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.avatar-upload__btn .avatar {
+  font-size: 32px;
+}
+
+.avatar-upload__btn--error {
+  box-shadow: 0 0 0 2px var(--color-danger);
+}
+
+.avatar-upload__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: inherit;
+  background: rgba(17, 24, 39, 0.55);
+  color: #ffffff;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.avatar-upload__overlay svg {
+  font-size: 22px;
+}
+
+.avatar-upload__btn:hover .avatar-upload__overlay,
+.avatar-upload__btn:focus-visible .avatar-upload__overlay {
+  opacity: 1;
+}
+
+/* touch screens have no hover — keep a hint visible */
+@media (hover: none) {
+  .avatar-upload__overlay {
+    opacity: 0.85;
+    background: linear-gradient(to top, rgba(17, 24, 39, 0.6) 0 35%, transparent 35%);
+    justify-content: flex-end;
+    padding-bottom: 10px;
+  }
+
+  .avatar-upload__overlay span {
+    display: none;
+  }
+}
+
+.avatar-upload__remove {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-danger);
+  font: inherit;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.avatar-upload__error {
+  max-width: 260px;
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  color: var(--color-danger);
+  text-align: center;
+}

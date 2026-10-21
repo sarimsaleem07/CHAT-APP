@@ -1,0 +1,21 @@
+.home {
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* Mobile: list ya open chat, ek waqt mein ek */
+@media (max-width: 767px) {
+  .home .chat-window {
+    display: none;
+  }
+
+  .home--chat-open .sidebar {
+    display: none;
+  }
+
+  .home--chat-open .chat-window {
+    display: flex;
+  }
+}

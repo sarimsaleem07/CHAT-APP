@@ -1,0 +1,11 @@
+.highlight {
+  padding: 0 1px;
+  border-radius: 3px;
+  background: #fde68a;
+  color: #111827;
+}
+
+[data-theme='dark'] .highlight {
+  background: #facc15;
+  color: #0f141c;
+}

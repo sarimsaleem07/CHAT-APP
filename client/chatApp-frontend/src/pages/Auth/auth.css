@@ -1,0 +1,52 @@
+.auth-submit.ant-btn {
+  font-weight: 600;
+}
+
+.auth-switch {
+  margin-top: var(--space-1);
+  text-align: center;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  color: var(--color-text-muted);
+}
+
+.auth-switch a {
+  font-weight: 600;
+}
+
+.auth-forgot {
+  margin-top: calc(var(--space-2) * -1);
+  text-align: right;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  font-weight: 500;
+}
+
+.auth-resend {
+  margin-top: var(--space-4);
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  color: var(--color-text-muted);
+}
+
+.auth-resend strong {
+  color: var(--color-text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.auth-link-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-primary);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-subtitle-email {
+  color: var(--color-text);
+  font-weight: 600;
+  word-break: break-all;
+}

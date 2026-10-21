@@ -1,0 +1,19 @@
+.text-field {
+  margin-bottom: var(--space-5);
+}
+
+.text-field__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.text-field__error {
+  margin-top: var(--space-1);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  color: var(--color-danger);
+}

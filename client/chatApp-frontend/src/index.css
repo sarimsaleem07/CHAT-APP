@@ -1,0 +1,85 @@
+/* Colors, font sizes, spacing (--color-*, --fs-*, --space-*...) theme/tokens.js se aate hain. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Typography */
+.t-display { font-family: var(--font-heading); font-size: var(--fs-display); line-height: var(--lh-display); font-weight: 700; letter-spacing: -0.02em; }
+.t-h1 { font-family: var(--font-heading); font-size: var(--fs-h1); line-height: var(--lh-h1); font-weight: 700; }
+.t-h2 { font-family: var(--font-heading); font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: 600; }
+.t-sub-heading { font-size: var(--fs-sub-heading); line-height: var(--lh-sub-heading); color: var(--color-text-muted); }
+.t-body { font-size: var(--fs-body); line-height: var(--lh-body); }
+.t-label { font-size: var(--fs-label); line-height: var(--lh-label); font-weight: 500; }
+.t-caption { font-size: var(--fs-caption); line-height: var(--lh-caption); color: var(--color-text-muted); }
+.t-muted { color: var(--color-text-muted); }
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Plain icon button (header icons) */
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.icon-btn:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+/* Theme switch animation (circle reveal) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Fallback for browsers without View Transitions */
+.theme-fade,
+.theme-fade *,
+.theme-fade *::before,
+.theme-fade *::after {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease !important;
+}

@@ -1,0 +1,96 @@
+.theme-toggle {
+  --toggle-w: 60px;
+  --toggle-h: 32px;
+  --knob: 26px;
+
+  position: relative;
+  flex-shrink: 0;
+  width: var(--toggle-w);
+  height: var(--toggle-h);
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, #cfe3ff 0%, #eef2ff 100%);
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.5s ease, border-color 0.5s ease;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.theme-toggle--dark {
+  background: linear-gradient(135deg, #1b2240 0%, #0f141c 100%);
+}
+
+/* little stars that appear in dark mode */
+.theme-toggle__stars {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1.5px 1.5px at 12px 9px, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 22px 20px, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 30px 11px, #fff 50%, transparent 51%);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+.theme-toggle--dark .theme-toggle__stars {
+  opacity: 0.9;
+  transform: translateY(0);
+}
+
+.theme-toggle__knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: grid;
+  place-items: center;
+  width: var(--knob);
+  height: var(--knob);
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(17, 24, 39, 0.2);
+  transition: transform 0.5s cubic-bezier(0.68, -0.4, 0.27, 1.4), background 0.5s ease;
+}
+
+.theme-toggle--dark .theme-toggle__knob {
+  transform: translateX(calc(var(--toggle-w) - var(--knob) - 6px));
+  background: #2a3442;
+}
+
+.theme-toggle__icon {
+  grid-area: 1 / 1;
+  font-size: 15px;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.theme-toggle__icon--sun {
+  color: #f59e0b;
+}
+
+.theme-toggle__icon--moon {
+  color: #c7d2fe;
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.4);
+}
+
+.theme-toggle--dark .theme-toggle__icon--sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.4);
+}
+
+.theme-toggle--dark .theme-toggle__icon--moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-toggle * {
+    transition: none !important;
+  }
+}
